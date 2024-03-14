@@ -1,9 +1,22 @@
-import React from 'react'
+import Banner from "@/components/Banner";
+import Price from "@/components/Price";
+import Reason from "@/components/Reason";
+import RentServer from "@/components/RentServer";
+import { useGlobalState } from "@/hooks";
+import React from "react";
 
 const Home = () => {
+  const [globalState, dispatch] = useGlobalState();
+  const { slide } = globalState;
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <Banner slide={slide} />
+      <Price />
 
-export default Home
+      <RentServer />
+      <Reason />
+    </div>
+  );
+};
+
+export default Home;

@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* banner */
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+  font-weight: bold !important;
+  width: 50px !important;
+}
+
+span.swiper-pagination-bullet {
+  background-color: orange;
+}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 100% !important;
+}
+/* end */
+
+.tab-header {
+  position: relative;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.5s ease-in;
+}
+
+.bottom-arrow {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.bottom-arrow-show {
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  content: " ";
+  width: 0;
+  opacity: 1;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-top: 16px solid #504bfd;
+}
+
+.headername {
+  position: relative;
+  overflow: hidden;
+}
+
+.headername::after {
+  position: absolute;
+  content: "Nổi bật";
+  top: 32%;
+  bottom: 0;
+  right: -16%;
+  background: red;
+  width: 138px;
+  height: 20px;
+  transform: rotate(51deg);
+  padding: 12px 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:where(.css-dev-only-do-not-override-asz0wb).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th {
+  background-color: #504bfd;
+  color: #ffffff;
+}

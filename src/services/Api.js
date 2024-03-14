@@ -1,7 +1,7 @@
 import axiosClient from "./axiosClient";
 import axiosClientMain from "./axiosClientMain";
 import PostImages from "./PostImagesAPI";
-export const GROUPID = 10052;
+export const GROUPID = 10053;
 export const API_DOMAIN = "https://api-crmcak.vps.vn/api/ApiMain";
 export const IMAGES_DOMAIN = "https://api-crmcak.vps.vn/upload";
 export const API_KEY = "netcoApikey2025";
