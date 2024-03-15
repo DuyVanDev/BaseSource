@@ -7,22 +7,23 @@ import { ConfigProvider } from "antd";
 function App() {
   return (
     <>
-      <ConfigProvider
-        theme={{
-          token: {
-            // Seed Token
-            colorPrimary: "#06b6d4",
-            itemColor: "#06b6d4",
-            // borderRadius: 2,
-            // Alias Token
-            // colorBgContainer: "#f6ffed",
-          },
-        }}
-      >
-        <GlobalProvider>
-          <MainRouter />
-        </GlobalProvider>
-      </ConfigProvider>
+        <ConfigProvider
+          theme={{
+            token: {
+              // Seed Token
+              colorPrimary: "#06b6d4",
+              itemColor: "#06b6d4",
+              // borderRadius: 2,
+              // Alias Token
+              // colorBgContainer: "#f6ffed",
+            },
+          }}
+        >
+          <GlobalProvider>
+            <MainRouter />
+          </GlobalProvider>
+        </ConfigProvider>
+      ;
     </>
   );
 }

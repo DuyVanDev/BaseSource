@@ -7,6 +7,7 @@ import {
   ADD_SETTING,
   ADD_NEWS,
   ADD_CAREER,
+  LOGIN,
 } from "./Contants";
 
 const menu = localStorage.getItem("menu");
@@ -16,6 +17,7 @@ const services = localStorage.getItem("services");
 const about = localStorage.getItem("about");
 const news = localStorage.getItem("news");
 const career = localStorage.getItem("career");
+const user = localStorage.getItem("user");
 
 export const initState = {
   menu: menu ? JSON.parse(menu) : [],
@@ -25,6 +27,7 @@ export const initState = {
   about: about ? JSON.parse(about) : {},
   news: news ? JSON.parse(news) : {},
   career: career ? JSON.parse(career) : {},
+  user: user ? JSON.parse(user) : {},
 };
 
 export const reducer = (state, action) => {
@@ -64,6 +67,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         career: action.payload,
+      };
+      case LOGIN:
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;

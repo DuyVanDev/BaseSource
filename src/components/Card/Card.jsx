@@ -51,9 +51,9 @@ const Card = ({hot = false}) => {
 
               <p>DataCenter: </p>
               <input type="radio" name="provider" />
-              <label for="dewey">FPT</label>
+              <label htmlFor="dewey">FPT</label>
               <input type="radio" name="provider" />
-              <label for="dewey">Viettel</label>
+              <label htmlFor="dewey">Viettel</label>
             </div>
             <div className="divide-y ">
               {list.map((item, index) => (

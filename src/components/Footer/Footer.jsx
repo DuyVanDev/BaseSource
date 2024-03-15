@@ -26,7 +26,6 @@ const Footer = () => {
 
   // Chuyển đối tượng thành mảng để render
   const menuItems = Object.values(menuMap);
-  console.log(menuItems);
   return (
     <div className="bg-footer py-4">
       <div className=" bg-transparent container  border-0 py-4">

@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import { useGlobalState } from '@/hooks';
 import { IMAGES_DOMAIN } from '@/services';
 const Banner = ({slide}) => {
-    console.log(slide)
   return (
     <div>
       <Swiper
