@@ -72,4 +72,7 @@ export const FormatDateJsonPro = (date, type = 0) => {
   if (type === 14) {
     return [day, "/", month].join("");
   }
+  if (type === 15) {
+    return [h, m].join(":");;
+  }
 };

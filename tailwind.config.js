@@ -8,12 +8,9 @@ export default {
         "secondary" : "red",
         "white" : "#ffffff",
         "black" : "#000000",
-        "orange" : "#f26d00",
         "lightorange" : "#fdbd00",
-        "blue" : "#090955",
         "darkblue" : "#020230",
         "lightgray" :"#fafafa",
-        "gray" : "#adb0b3"
         
       },
       backgroundImage : {

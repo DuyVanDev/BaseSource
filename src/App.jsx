@@ -4,10 +4,13 @@ import { MainRouter } from "./router";
 import { GlobalProvider } from "./store";
 import { ConfigProvider } from "antd";
 
+import locale from 'antd/es/date-picker/locale/vi_VN';
+
 function App() {
   return (
     <>
         <ConfigProvider
+        locale={locale}
           theme={{
             token: {
               // Seed Token
@@ -23,7 +26,6 @@ function App() {
             <MainRouter />
           </GlobalProvider>
         </ConfigProvider>
-      ;
     </>
   );
 }

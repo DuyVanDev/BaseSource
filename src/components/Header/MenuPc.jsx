@@ -9,15 +9,14 @@ import { googleLogout } from "@react-oauth/google";
 const MenuPc = () => {
   const [globalState, dispatch] = useGlobalState();
   const { setting, user } = globalState;
-  console.log(user);
   const logout = async () => {
     googleLogout();
     localStorage.setItem("user",null)
   };
 
   useEffect(() => {
-
-  },[user])
+    console.log(user)
+  },[user,logout])
   const content = (
     <div>
       <Link to={"/user"}>Cá nhân</Link>

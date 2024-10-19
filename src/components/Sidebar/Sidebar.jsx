@@ -1,170 +1,96 @@
-import { Layout, Menu, Button, Table } from "antd";
-import { useState } from "react";
-const { Header, Sider, Content } = Layout;
+import { Link } from "react-router-dom";
+import image from "../../assets/images/home.png"
 
-const columns = [
+const menuItems = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    
-    width: '30%',
+    title: "MENU",
+    items: [
+      {
+        icon: "/assets/home.png",
+        label: "Trang chủ",
+        href: "/",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+      {
+        icon: "/assets/teacher.png",
+        label: "Quản lý phòng",
+        href: "/list/teachers",
+        visible: ["admin", "teacher"],
+      },
+      {
+        icon: "/assets/student.png",
+        label: "Quản lý lễ tân",
+        href: "/list/students",
+        visible: ["admin", "teacher"],
+      },
+      {
+        icon: "/assets/parent.png",
+        label: "Quản lý bếp",
+        href: "/list/location",
+        visible: ["admin", "teacher"],
+      },
+      {
+        icon: "/assets/subject.png",
+        label: "Quản lý dịch vụ",
+        href: "/list/faculty",
+        visible: ["admin"],
+      },
+      {
+        icon: "/assets/class.png",
+        label: "Quản lý khách hàng",
+        href: "/list/classes",
+        visible: ["admin", "teacher"],
+      },
+      
+    ],
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    
-    width: '40%',
+    title: "OTHER",
+    items: [
+      {
+        icon: "/assets/profile.png",
+        label: "Cá nhân",
+        href: "/profile",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+      {
+        icon: "/assets/setting.png",
+        label: "Cài đặt",
+        href: "/settings",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+      {
+        icon: "/assets/logout.png",
+        label: "Đăng xuất",
+        href: "/logout",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+    ],
   },
 ];
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Jim Red',
-    age: 32,
-    address: 'London No. 2 Lake Park',
-  },
-];
 
-const SideBar = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const [itemName, setItemName] = useState(1);
+const Sidebar = () => {
   return (
-    <Layout className="h-full bg-white mt-[110px]">
-      <Sider
-        style={{
-          background: "blue !important",
-          position: "fixed",
-          left: 0,
-          top: "110px",
-        }}
-        className="h-full bg-white border-2 border-lightgray"
-        trigger={null}
-        collapsible
-        collapsed={collapsed}
-        mode="light"
-      >
-        <div className="demo-logo-vertical" />
-        <Menu
-          onClick={({ key }) => {
-            setItemName(key);
-          }}
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={1}
-          items={[
-            {
-              key: "1",
-              icon: (
-                <img
-                  src="https://pcrender.com/static/media/nvidia.d8464b510ab64c1b32e5df090967298b.svg"
-                  width={20}
-                />
-              ),
-              label: "Thuê máy tính",
-            },
-            {
-              key: "2",
-              icon: (
-                <img
-                  src="https://pcrender.com/static/media/money.7b2d5694bfce2be40720fe627ac3b897.svg"
-                  width={20}
-                />
-              ),
-
-              label: "Nạp tiền",
-            },
-            {
-              key: "3",
-              icon: (
-                <img
-                  src="https://pcrender.com/static/media/money.7b2d5694bfce2be40720fe627ac3b897.svg"
-                  width={20}
-                />
-              ),
-
-              label: "Quản lý đơn hàng",
-            },
-          ]}
-        />
-      </Sider>
-      <Layout className="col-start-4 col-end-12 ml-[200px] bg-white  border-2 border-lightgray">
-        {itemName == 1 && (
-          <>
-            <Header
-              className="bg-white"
-              style={{
-                padding: 0,
-                margin: "0 16px",
-              }}
-            >
-              <Button type="primary" shape="round" className="bg-primary">
-                Tạo PC
-              </Button>
-            </Header>
-            <Content
-              className="bg-lightgray border-[2px] border-gray "
-              style={{
-                margin: "0 16px",
-                minHeight: 280,
-              }}
-            >
-              <div className="w-full flex items-center justify-center">
-              <Button type="primary" shape="round" className="bg-primary">
-               Xem thêm
-              </Button>
-              </div>
-            </Content>
-          </>
-        )}
-
-        {itemName == 2 && (
-          <>
-            <Header
-              className="bg-white flex  items-center justify-end"
-              style={{
-                padding: 0,
-                margin: "0 16px",
-              }}
-            >
-              <Button type="primary" shape="round" className="bg-primary ">
-                Nạp tiền
-              </Button>
-            </Header>
-            <Content
-              className="bg-lightgray border-[2px] border-gray p-2"
-              style={{
-                margin: "0 16px",
-                minHeight: 280,
-              }}
-            >
-              <Table columns={columns} dataSource={data} className="shadow-xl"  />
-            </Content>
-          </>
-        )}
-      </Layout>
-    </Layout>
+    <div className="mt-4 text-sm">
+      {menuItems.map((i) => (
+        <div className="flex flex-col gap-4" key={i.title}>
+         
+          {i.items.map((item) => {
+            return (
+              <Link
+                to={item.href}
+                key={item.label}
+                className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-[#EDF9FD]"
+              >
+                <img src={item?.icon} alt="" width={20} height={20} />
+                <span className="hidden lg:block">{item.label}</span>
+              </Link>
+            );
+          })}
+        </div>
+      ))}
+    </div>
   );
 };
-export default SideBar;
+
+export default Sidebar;

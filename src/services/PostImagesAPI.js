@@ -2,7 +2,7 @@ import axios from "axios";
 import queryString from "query-string";
 
 const PostImages = axios.create({
-  baseURL: "https://api-v4-erp.vps.vn/api/ApiMain",
+  baseURL: "https://api-crmcak.vps.vn/api/ApiMain",
   headers: {
     "content-type": "multipart/form-data",
   },

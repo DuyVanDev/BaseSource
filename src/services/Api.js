@@ -7,8 +7,8 @@ export const IMAGES_DOMAIN = "https://api-crmcak.vps.vn/upload";
 export const API_KEY = "netcoApikey2025";
 const config = {
   headers: {
-    "content-type": "application/json",
-  },
+    "Content-Type": "multipart/form-data",
+    },
 };
 
 export const callApi = {

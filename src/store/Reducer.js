@@ -27,7 +27,6 @@ export const initState = {
   about: about ? JSON.parse(about) : {},
   news: news ? JSON.parse(news) : {},
   career: career ? JSON.parse(career) : {},
-  user: user ? JSON.parse(user) : {},
 };
 
 export const reducer = (state, action) => {
