@@ -1,4 +1,15 @@
-/* Calendar container styling */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* #region Calendar container styling */
 .fc {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
@@ -224,4 +235,45 @@ td.fc-timeline-lane.fc-resource.area-lane{
 
 td.fc-datagrid-cell.fc-resource.area-lane{
   background-color: rgba(116, 105, 105, 0.1) !important; /* Màu nền cho các ô slot trong hàng khu vực */
+}
+
+.tab-action-room .ant-tabs-tab.ant-tabs-tab-active {
+  background: white !important;
+}
+
+.tab-action-room .ant-tabs-nav-wrap {
+  background: #c5f0d4 !important;
+  
+}
+
+.tab-action-room .ant-tabs-nav-list {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+tr.ant-table-expanded-row.ant-table-expanded-row-level-1 {
+  padding:  0px !important;
+}
+
+.ant-table-expanded-row.ant-table-expanded-row-level-1 .ant-table-cell {
+  padding: 0 !important;
+}
+
+.tbl-room .ant-table-row:hover {
+  background-color: #c5f0d4 !important;
+}
+.tbl-room .ant-table-row:hover .ant-table-cell{
+  background-color: #c5f0d4 !important;
+}
+
+.expanded .ant-tabs-tab {
+  color: black !important;
+  font-weight: 500;
+}
+
+.expanded .ant-tabs-tab.ant-tabs-tab-active {
+  border : none;
+  padding: 0 16px;
+  z-index: 2;
+  
 }

@@ -36,7 +36,7 @@ const SelectInput = ({
         <div className="">
           {label && (
             <div className="">
-              <label className="text-xs font-bold text-gray-500 min-w-[100px] ">
+              <label className="text-xs font-bold text-gray-500 w-[100px] ">
                 {label}{" "}
                 {required && <span className="text-red-500 ml-1">(*)</span>}
               </label>
@@ -62,7 +62,7 @@ const SelectInput = ({
       )}
       {Typelayout == 3 && (
         <div>
-          <label className="text-xs font-bold text-gray-500 min-w-[100px] ">
+          <label className="text-xs font-bold text-gray-500 w-[100px] ">
             {label} {required && <span className="text-red-500 ml-1">(*)</span>}
           </label>
           <Select
@@ -80,8 +80,8 @@ const SelectInput = ({
       {Typelayout == 4 && (
         <div className="w-full flex items-center gap-8">
           {label && (
-            <div className="">
-              <label className="text-sm min-w-[100px] ">
+            <div className="w-[100px] ">
+              <label className="text-sm ">
                 {label}{" "}
                 {required && <span className="text-red-500 ml-1">(*)</span>}
               </label>

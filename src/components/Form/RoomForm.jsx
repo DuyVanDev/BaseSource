@@ -1,108 +1,63 @@
-import React from 'react';
-import { Layout, Form, Input, Select, Upload, Button, Checkbox, Radio } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-
-const { Content } = Layout;
-const { Option } = Select;
+import React from "react";
+import { SaveOutlined, StopOutlined } from "@ant-design/icons";
+import InputField from "../InputField";
+import SelectInput from "../SelectInput";
+import ImgMutilUploadComp from "../ImgMultiUpload";
 
 const RoomForm = () => {
   return (
-    <Layout>
-      <Content className="p-4">
-        <h1 className="text-2xl font-bold mb-4">Add a new room</h1>
-        
-        {/* Room Picture */}
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold">Room Picture</h2>
-          <Upload listType="picture-card">
-            <div>
-              <UploadOutlined />
-              <div style={{ marginTop: 8 }}>Add image</div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 flex-wrap gap-x-4 gap-y-8 mb-2 p-4">
+        <div className="flex flex-col gap-4">
+          <InputField
+            className=" focus:border-black"
+            label="Tên phòng"
+            name="UserName"
+          />
+
+          <SelectInput
+            className="w-full"
+            label={<div className="font-semibold">Khu vực</div>}
+            Typelayout={4}
+          />
+
+          <SelectInput
+            className="w-full"
+            label={<div className="font-semibold">Hạng phòng</div>}
+            Typelayout={4}
+          />
+
+          <InputField className="md:col-span-1 col-span-2" label="Ghi chú" />
+          <ImgMutilUploadComp />
+        </div>
+        <div>
+          <div className="mb-4 p-4 bg-gray-100 border border-gray-300 rounded-md">
+            <div className="flex justify-between items-center gap-3">
+              <span className="text-gray-700 ">
+                Phòng sẽ được áp dụng theo giá của hạng phòng:
+              </span>
+              <i className="fas fa-pen text-gray-500"></i>
             </div>
-          </Upload>
-        </div>
-
-        {/* Room Details */}
-        <Form layout="vertical" className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-lg font-semibold mb-4">Room Details</h2>
-
-          <div className="grid grid-cols-2 gap-4">
-            <Form.Item label="Room number" name="roomNumber" rules={[{ required: true }]}>
-              <Input placeholder="room number" />
-            </Form.Item>
-            <Form.Item label="Room floor" name="roomFloor" rules={[{ required: true }]}>
-              <Input placeholder="room floor number" />
-            </Form.Item>
-            <Form.Item label="Room capacity" name="roomCapacity" rules={[{ required: true }]}>
-              <Input placeholder="2-4 guests" />
-            </Form.Item>
-            <Form.Item label="Room price per night" name="roomPrice" rules={[{ required: true }]}>
-              <Input prefix="$" placeholder="price" />
-            </Form.Item>
-            <Form.Item label="Reservation status" name="reservationStatus" rules={[{ required: true }]}>
-              <Select placeholder="Select status">
-                <Option value="vacant">Vacant</Option>
-                <Option value="occupied">Occupied</Option>
-              </Select>
-            </Form.Item>
-            <Form.Item label="Room type" name="roomType" rules={[{ required: true }]}>
-              <Select placeholder="Select room type">
-                <Option value="deluxe">Deluxe</Option>
-                <Option value="standard">Standard</Option>
-              </Select>
-            </Form.Item>
-            <Form.Item label="Bed type" name="bedType" rules={[{ required: true }]}>
-              <Select placeholder="Select bed type">
-                <Option value="king">King size</Option>
-                <Option value="queen">Queen size</Option>
-              </Select>
-            </Form.Item>
-            <Form.Item label="Room size" name="roomSize">
-              <Input placeholder="square footage" />
-            </Form.Item>
+            <ul className="list-disc list-inside mt-3 text-gray-700 flex flex-col gap-3">
+              <li>Giá giờ:</li>
+              <li>Giá cả ngày:</li>
+              <li>Giá qua đêm:</li>
+              <li>Phụ thu quá giờ:</li>
+            </ul>
           </div>
-
-          <Form.Item label="Room description" name="roomDescription" rules={[{ required: true }]}>
-            <Input.TextArea rows={3} placeholder="room description" />
-          </Form.Item>
-        </Form>
-
-        {/* Amenities */}
-        <div className="my-6">
-          <h2 className="text-lg font-semibold">Amenities</h2>
-          <Checkbox.Group className="grid grid-cols-4 gap-2">
-            <Checkbox value="petFriendly">Pet-friendly</Checkbox>
-            <Checkbox value="smoking">Smoking</Checkbox>
-            <Checkbox value="wifi">Wi-Fi</Checkbox>
-            <Checkbox value="miniBar">Mini-bar</Checkbox>
-            <Checkbox value="coffeeMaker">Coffee maker</Checkbox>
-            <Checkbox value="cityView">City view</Checkbox>
-            <Checkbox value="shower">Shower</Checkbox>
-            <Checkbox value="sofaBox">Sofa box</Checkbox>
-            <Checkbox value="refrigerator">Refrigerator</Checkbox>
-            <Checkbox value="airConditioner">Air conditioner</Checkbox>
-            <Checkbox value="tvCable">TV Cable</Checkbox>
-            <Checkbox value="seaView">Sea view</Checkbox>
-          </Checkbox.Group>
         </div>
-
-        {/* Accessibility Features */}
-        <div className="my-6">
-          <h2 className="text-lg font-semibold">Accessibility Features</h2>
-          <Checkbox.Group className="grid grid-cols-3 gap-2">
-            <Checkbox value="wheelchairAccessible">Wheelchair accessible</Checkbox>
-            <Checkbox value="showerGrabBars">Shower grab bars</Checkbox>
-            <Checkbox value="hearingAid">Hearing aid compatible</Checkbox>
-          </Checkbox.Group>
-        </div>
-
-        {/* Save Changes Button */}
-        <div className="mt-4">
-          <Button type="primary" className="mr-4">Save Changes</Button>
-          <Button>Cancel</Button>
-        </div>
-      </Content>
-    </Layout>
+      </div>
+      <div className="p-4 flex items-center gap-2 justify-end  ">
+        <button className="bg-green-600 text-white p-2 rounded-md flex items-center gap-1 text-sm font-normal">
+          <SaveOutlined />
+          Thêm mới
+        </button>
+        <button className="bg-red-600 text-white p-2 rounded-md flex items-center gap-1 text-sm font-normal">
+          <StopOutlined />
+          Hủy
+        </button>
+      </div>
+    </>
   );
 };
 

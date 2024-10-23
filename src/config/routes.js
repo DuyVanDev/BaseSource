@@ -5,7 +5,9 @@ const routes = {
   room : "/room",
   bookroom : "/bookroom",
   service : "/service",
-  option : "/option"
+  option : "/option",
+  priceroom : "/priceroom",
+  workschedule : "/workschedule"
 };
 
 export default routes;

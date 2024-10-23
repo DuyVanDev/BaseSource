@@ -17,10 +17,10 @@ const InputField = ({
         <div className="w-full flex items-end gap-8">
           {label && (
             <div className="">
-              <label className="text-sm font-semibold min-w-[100px] ">
+              <p className="text-sm font-semibold min-w-[100px] ">
                 {label}{" "}
                 {required && <span className="text-red-500 ml-1">(*)</span>}
-              </label>
+              </p>
             </div>
           )}
           <input

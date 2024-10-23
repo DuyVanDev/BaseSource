@@ -1,9 +1,9 @@
 import React from "react";
 import InputField from "../InputField";
-import { Radio } from "antd";
+import { DatePicker, Radio } from "antd";
 import SelectInput from "../SelectInput";
 import { SaveOutlined, StopOutlined } from "@ant-design/icons";
-
+const { RangePicker } = DatePicker;
 const PriceRoom = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -14,12 +14,21 @@ const PriceRoom = () => {
             <InputField label={"Mã bảng giá"} />
           </div>
           <div className="flex items-end gap-3">
-            <label htmlFor="" className="text-sm font-semibold">
-              Hiệu lực
-            </label>
-            <div className="grid grid-cols-2 gap-2 grow">
-              <InputField className={"w-full"} type="date" label={false} />
-              <InputField type="date" label={false} />
+          <div htmlFor="" className="text-sm font-semibold w-[100px]">
+             Hiệu lực
+            </div>
+            <div className="grid ">
+              <RangePicker
+                showTime={{
+                  format: "HH:mm",
+                }}
+                format="YYYY-MM-DD HH:mm"
+                className="border-0 outline-none shadow-none w-full border-b-[1px] rounded-none border-gray-400"
+                onChange={(value, dateString) => {
+                  console.log("Selected Time: ", value);
+                  console.log("Formatted Selected Time: ", dateString);
+                }}
+              />
               {/* <ClockCircleOutlined className="ml-2 text-gray-500" /> */}
             </div>
           </div>
@@ -29,12 +38,21 @@ const PriceRoom = () => {
           </div>
 
           <div className="flex items-end gap-3">
-            <label htmlFor="" className="text-sm font-semibold">
+            <div htmlFor="" className="text-sm font-semibold w-[100px]">
               Thời gian lưu trú
-            </label>
-            <div className="grid grid-cols-2 gap-2 grow">
-              <InputField className={"w-full"} type="date" label={false} />
-              <InputField type="date" label={false} />
+            </div>
+            <div className="grid  ">
+              <RangePicker
+                showTime={{
+                  format: "HH:mm",
+                }}
+                format="YYYY-MM-DD HH:mm"
+                className="border-0 outline-none shadow-none w-full border-b-[1px] rounded-none border-gray-400"
+                onChange={(value, dateString) => {
+                  console.log("Selected Time: ", value);
+                  console.log("Formatted Selected Time: ", dateString);
+                }}
+              />
               {/* <ClockCircleOutlined className="ml-2 text-gray-500" /> */}
             </div>
           </div>
@@ -46,7 +64,7 @@ const PriceRoom = () => {
           <label className="block mb-2 font-semibold text-base">
             Phạm vi áp dụng
           </label>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
             <Radio.Group className="mt-4 flex flex-col gap-3" value={1}>
               <div className="flex items-center mb-2">
                 <Radio value={1} className="mr-2 text-sm">

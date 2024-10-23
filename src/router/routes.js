@@ -8,6 +8,8 @@ const User = lazy(() => import("@/pages/User"));
 const Room = lazy(() => import("@/pages/Room/Room"));
 const Service = lazy(() => import("@/pages/Service/Service"));
 const Option = lazy(() => import("@/pages/Option/Option"));
+const PriceRoom = lazy(() => import("@/pages/PriceRoom/PriceRoom"));
+const WorkSchedule = lazy(() => import("@/pages/WorkSchedule/WorkSchedule"));
 
 
 export const publicRoute = [
@@ -44,6 +46,16 @@ export const publicRoute = [
   {
     path: routes.option,
     childrend: Option,
+    layout: DefaultLayout,
+  },
+  {
+    path: routes.priceroom,
+    childrend: PriceRoom,
+    layout: DefaultLayout,
+  },
+  {
+    path: routes.workschedule,
+    childrend: WorkSchedule,
     layout: DefaultLayout,
   },
   
